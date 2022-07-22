@@ -1,0 +1,122 @@
+@import '~assets/scss/nullstyle';
+
+@font-face {
+    font-family: "Sans Pro Regular";
+    src: url("~assets/fonts/SourceSansPro-Regular.woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Sans Pro SemiBold";
+    src: url("~assets/fonts/SourceSansPro-SemiBold.woff");
+    font-weight: 600;
+    font-style: normal;
+}
+
+body {
+    background-color: #E5E5E5;
+}
+
+$PADDING_SIDE: 32px;
+
+.wrapper {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    
+    .main {
+        width: 100%;
+        height: 100%;
+        padding: 0 $PADDING_SIDE;
+
+        @media (max-width: 420px) {
+            padding: 0 15px;
+        }
+
+        &__header {
+            display: flex;
+            height: 83px;
+            width: 100%;
+            align-items: center;
+            
+            .header {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                align-items: center;
+                z-index: 1000;
+
+                &__title {
+                    font-family: 'Sans Pro SemiBold';
+                    font-size: 25px;
+                    margin-right: 10px;
+
+                    @media (max-width: 370px) {
+                        font-size: 6.6vw;
+                    }
+                }
+
+                .combobox {
+                    display: flex;
+                
+                    &__button-sort {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+
+
+        .products {
+            display: flex;
+            width: 100%;
+            height: 100%;
+
+            &__container {
+                display: flex;
+                width: 100%;
+                height: 100%;
+                column-gap: 16px;
+                @media (max-width: 740px) {
+                    flex-direction: column;
+                }
+
+                .products__control {
+                    position: sticky;
+                    top: 24px;
+                    display: flex;
+                    flex-basis: 332px;
+                    flex-shrink: 0;
+                    height: 440px;
+                    background-color: #FFFEFB;
+                    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04), 0px 6px 10px rgba(0, 0, 0, 0.02);
+                    border-radius: 4px;
+                    padding: 24px;
+
+                    @media (max-width: 740px) {
+                        position: static;
+                        flex-basis: 100%;
+                        margin-bottom: 50px;
+                    }
+                }
+
+                .products__view {
+                    display: flex;
+                    width: 100%;
+                }
+            }
+        }
+
+        #holder {
+            position: absolute;
+            z-index: 9999;
+            right: $PADDING_SIDE;
+
+            @media (max-width: 420px) {
+                right: 15px;
+            }
+        }
+    }
+}
